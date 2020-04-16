@@ -10,6 +10,12 @@ try:
 except ImportError:
     raise Exception('Please create rest_settings.py file')
 
+# загрузка настроек djoser
+try:
+    from what_to_cook.settings.djoser_settings import *
+except ImportError:
+    raise Exception('Please create djoser_settings.py file')
+
 # загрузка настроек для разрешения всех кросдоменных запросов
 try:
     from what_to_cook.settings.corsheaders_settings import *

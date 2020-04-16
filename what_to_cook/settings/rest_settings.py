@@ -1,3 +1,7 @@
+from .base_settings  import INSTALLED_APPS
+
+INSTALLED_APPS.append('rest_framework')
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
       'rest_framework.permissions.IsAdminUser',
@@ -10,6 +14,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
     'DEFAULT_PAGINATION_CLASS':

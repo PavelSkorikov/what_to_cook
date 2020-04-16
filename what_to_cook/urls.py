@@ -19,10 +19,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # путь к админ - панели
     path('admin/', admin.site.urls),
+    # все виды аутентификации
+    path('auth/', include('djoser.urls')),
+    path('auth_token/', include('djoser.urls.authtoken')),
+    path('auth_jwt/', include('djoser.urls.jwt')),
+    # путь к приложению main_app
     path('api/v1/main_app/', include('main_app.urls')),
     # подключаем базовую аутентификацию Django Rest (сессии)
-    path('api/v1/base-auth/', include('rest_framework.urls')),
+    # path('api/v1/base-auth/', include('rest_framework.urls')),
 ]
 
 # статические файлы будут раздаваться из дирректории MEDIA при включенном
