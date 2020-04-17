@@ -3,5 +3,7 @@ from . import views
 
 app_name = 'main_app'
 urlpatterns = [
-    path('recipes/', views.RecipeListView.as_view())
+    path('recipe/all/', views.RecipeListView.as_view()),
+    path('recipe/detail/<uuid:pk>', views.RecipeDetailView.as_view()),
+    path('ingredient/all/', views.IngridientListView.as_view()),
 ]
